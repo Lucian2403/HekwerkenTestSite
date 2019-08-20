@@ -130,9 +130,16 @@ $(document).ready(function(){
             0:{
                 items:1,
             },
+
+            370:{
+                items:1,
+                stagePadding: 50,
+            },
+
             600:{
                 items:2,
             },
+
             1025:{
                 items:3,
             },
