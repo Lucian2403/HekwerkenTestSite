@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+//COLORS
+
+//           border: 1px solid red;
+
+$color-yellow: #dcad28;
+$color-yellow-hover: #e7c634;
+$color-red: #691c0f;
+$color-light-grey: #e9ecef;
+$color-lighter-grey: #f8f9fa;
+$color-grey: #868e96;
+$color-dark-grey: #343a40;
+$color-white-grey: lighten(#ebebeb, 5%);
+
+$height-header-menu: 10rem;
+
+//MIXIN
+@mixin tablet_menu() {
+
+    .hamburger-icon {
+      display: block;
+      height: 1.8rem;
+      width: 3rem;
+      position: relative;
+      cursor: pointer;
+      margin-right: 1.5rem;
+      margin-top: 2.8rem;
+      z-index: 1001;
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: black;
+        display: block;
+        border-radius: 3px;
+        transition: 200ms ease-out;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+        }
+
+        &:nth-child(3) {
+          top: 100%;
+        }
+      }
+
+      &:hover {
+        span {
+          &:nth-child(1) {
+            transform: translateY(-2px);
+          }
+
+          &:nth-child(3) {
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+
+    #menu-toggle:checked {
+      // * create X
+      ~.hamburger-icon span {
+        &:nth-child(1) {
+          transition-delay: 100ms;
+          top: 50%;
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(3rem) scaleY(0);
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+
+      // * rotate X on open hover
+      ~.hamburger-icon:hover span {
+        &:nth-child(1) {
+          transform: rotate(-135deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(135deg);
+        }
+      }
+
+      // ! show menu
+      .menu {
+        display: block
+      }
+    }
+}
+
+
+//RESPONSIVE DESIGN MIXIN
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px:      Phone
+600 - 782px:    Tablet portrait small
+782 - 900px:    Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where our normal styles apply
+2100px +        Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-port-small
+- tab-land
+- big-desktop
+
+
+1em = 16px;
+em for 600px is (600/16) = 37.5em
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };    //600px;
+  }
+
+  @if $breakpoint == tab-port-small  {
+    @media only screen and (max-width: 48.875em) { @content };     //782px;
+  }
+
+  @if $breakpoint == tab-port  {
+    @media only screen and (max-width: 56.25em) { @content };     //900px;
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == small-desktop {
+    @media only screen and (max-width: 110em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 131.25em) { @content };    //2100px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//TYPOGRAPHY
+html {
+  //This define what 1rem is
+  font-size: 62.5%;   //1rem = 10px; 10px/16px = 62.5%
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+
+  // RESPONSIVE MEDIA
+  @include respond(tab-port) {
+    font-size: 56.25%;   //1rem = 9px, 9/16 = 56.25%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;     //1rem = 12, 12/16 = 75%
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 300;
+}
+h2 {
+  font-size: 3.2rem;
+  font-family: "Roboto";
+  font-weight: 300;
+  color: $color-dark-grey;
+}
+h3 {
+  font-size: 2.2rem;
+  font-family: "Roboto";
+  font-weight: 300;
+  color: $color-grey;
+}
+p {
+  line-height: 3rem;
+  font-size: 1.7rem;
+  color: $color-grey;
+
+  strong {
+    display: block;
+    color: $color-dark-grey;
+  }
+
+  @include respond(tab-land) {
+    font-size: 1.8rem;
+  }
+}
+
+//GLOBAL
+//.site-content {
+//  margin-top: 20rem;
+//}
+
+.container{
+  max-width: 117rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond(big-desktop) {
+    max-width: 115rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-land) {
+    max-width: 90rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  //@include  respond(tab-port) {
+  //  max-width: 85rem;
+  //  width: 100%;
+  //  margin: 0 auto;
+  //}
+
+  @include respond(tab-port-small) {
+    max-width: 85rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.logged-in {
+  .site-header {
+    top: calc(3.2rem - 9.5rem);
+
+    @include respond(big-desktop) {
+      top: calc(2.6rem - 9.5rem);
+    }
+
+    @include respond(tab-land) {
+      top: calc(3.2rem - 7rem);
+    }
+
+    @include respond(tab-port-small) {
+      top: calc(5rem - 7rem);
+    }
+  }
+}
+
+#wpadminbar {
+  @include respond(tab-port-small) {
+    position: fixed;
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-size: 1.8rem !important;
+  padding: 1.5rem 4rem;
+
+  transition: .3s;
+}
+
+.button_primary,
+.button_primary:visited {
+  background-color: $color-yellow;
+  color: $color-dark-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: $color-yellow-hover;
+  }
+}
+
+.button_secondary,
+.button_secondary:visited {
+  background-color: $color-light-grey;
+  color: $color-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: darken($color-light-grey, 10%);
+  }
+}

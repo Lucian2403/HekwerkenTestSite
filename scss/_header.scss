@@ -1,0 +1,324 @@
+.site-header {
+  position: sticky;
+  top: -9.5rem;
+  z-index: 9999;
+
+  @include respond(tab-port) {
+    top: -7rem;
+  }
+
+  //backface-visibility: hidden;
+
+  .site-branding {
+    margin-top: -5.7rem;
+    width: 33%;
+    transition: .3s;
+    padding-left: 1rem;
+
+    img {
+      height: auto;
+      width: 12rem;
+      transition: .3s;
+    }
+  }
+
+  .main-navigation {
+
+    .main {
+      height: 9.5rem;
+      width: 100%;
+      display: flex;
+
+      #menu-toggle {
+        display: none;
+      }
+
+      .hamburger-icon {
+        display: none;
+      }
+
+      @include respond(tab-land) {
+        height: 7rem;
+
+        //MIXIN OF THE HAMBURGHER MENU
+        @include tablet_menu;
+      }
+
+
+      &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(tab-land) {
+          display: none;
+        }
+
+        &__title {
+          width: 44%;
+
+        }
+
+        h1 {
+          font-size: 2.7rem;
+          color: $color-yellow;
+          font-family: "Roboto";
+          font-weight: 300;
+          text-align: right;
+        }
+          .main_navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 3;
+
+            li {
+              list-style: none;
+
+              &:not(:last-child) {
+                margin-right: 3rem;
+              }
+
+              a,
+              a:visited {
+                text-decoration: none;
+                font-size: 1.5rem;
+                font-family: "Roboto";
+                font-weight: 300;
+                color: $color-grey;
+
+                transition: .2s;
+
+                &:hover {
+                  color: $color-dark-grey;
+                }
+              }
+            }
+
+            .current-menu-item {
+              a,
+              a:visited {
+                color: $color-dark-grey;
+                font-weight: 400;
+              }
+            }
+
+            //SUBMENU
+            ul.sub-menu {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .sub {
+      height: 6rem;
+      background-color: $color-yellow;
+      box-shadow: 0 .8rem 2.5rem rgba($color-dark-grey, .3);
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      #sub-menu-toggle {
+        display: none;
+      }
+
+      .hamburger-icon {
+        display: none;
+      }
+
+      @include respond(tab-land) {
+
+        //MIXIN OF THE HAMBURGHER MENU
+        @include tablet_menu;
+      }
+
+      &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(tab-land) {
+          justify-content: flex-end;
+        }
+
+        .main_phone {
+          width: 120%;
+          @include respond(tab-land) {
+            margin-right: 0;
+            text-align: right;
+            padding-right: 1.5rem;
+
+            transition: .6s;
+          }
+
+          a,
+          a:visited {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: "Roboto";
+            color: $color-dark-grey;
+            font-weight: 400;
+
+            &:hover {
+              color: $color-red;
+            }
+          }
+        }
+
+        .sub_menu {
+
+          @include respond(tab-land) {
+            display: none;
+          }
+
+          .sub_navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            li {
+              list-style: none;
+
+              &:not(:last-child) {
+                margin-right: 2rem;
+              }
+
+              a,
+              a:visited {
+                text-decoration: none;
+                font-size: 1.5rem;
+                font-family: "Roboto";
+                color: $color-dark-grey;
+                font-weight: 300;
+
+                transition: .2s;
+
+                &:hover {
+                  color: $color-red;
+                }
+              }
+            }
+
+            .current-menu-item {
+              a,
+              a:visited {
+                color: $color-red;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+.logged-in{
+  .sub {
+    //margin-top: 3.2rem;
+  }
+}
+
+//////////////////////////////
+//////BREADCRUMB AND TITLE////
+//////////////////////////////
+.grey {
+  background-color: $color-lighter-grey;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-land) {
+    padding: 0 2rem;
+  }
+
+  .title_page_breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 3.2rem;
+      font-family: "Roboto";
+      color: $color-grey;
+      font-weight: 300;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-family: "Roboto";
+      color: $color-grey;
+
+      &:hover {
+        color: $color-dark-grey;
+      }
+    }
+
+    span {
+      font-size: 1.5rem;
+      font-family: "Roboto";
+      color: $color-grey;
+    }
+  }
+}
+
+//////////////////////////
+////////MMENU SLIDE///////
+//////////////////////////
+#nav-mobile {
+
+  li {
+    font-size: 1.8rem;
+    font-family: "Roboto";
+    padding: 1rem;
+    vertical-align: center;
+
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+
+  .mm-navbar {
+    a {
+      font-size: 1.7rem;
+      font-family: "Roboto";
+      font-weight: 300;
+      color: $color-yellow;
+    }
+  }
+
+  .mobile-icons{
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    i{
+      color: $color-yellow;
+      font-size: 2.6rem;
+      padding: 1rem;
+      border: 1px solid transparent;
+
+      transition: .3s;
+
+      &:hover {
+        box-shadow: .4rem .5rem .5rem rgba(black, .7);
+        border: 1px solid $color-yellow;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+

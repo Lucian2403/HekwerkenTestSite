@@ -1,0 +1,199 @@
+.banner {
+  height: 64rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond(phone) {
+    height: 80rem;
+  }
+
+
+  &__left{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+
+    @include respond(phone) {
+      flex-direction: column-reverse;
+    }
+
+    &__image {
+      height: 64rem;
+      width: 70%;
+      background-position: -35rem -5rem;
+      background-repeat: no-repeat;
+
+      @include respond(small-desktop) {
+        background-position: -50rem -5rem;
+      }
+
+      @include respond(tab-port) {
+        background-position: -60rem -5rem;
+      }
+
+      @include respond(phone) {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 50rem;
+      }
+    }
+
+    &__color {
+      background-color: #ebebeb;
+      height: 64rem;
+      width: 30%;
+
+      @include respond(tab-land) {
+        width: 50%;
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        height: 30rem;
+      }
+    }
+
+    &__text {
+      position: absolute;
+      right: 6rem;
+      top: 20rem;
+
+      @include respond(small-desktop) {
+        width: 50%;
+        right: 3rem;
+      }
+
+      @include respond(tab-land) {
+        right: 9rem;
+        width: auto;
+      }
+
+      @include respond(tab-port) {
+        right: 3rem;
+        width: 60%;
+      }
+
+      @include respond(tab-port-small) {
+        right: 2rem;
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        text-align: center;
+        padding: 0 1.5rem;
+        top: 3.5rem;
+        left: auto;
+        right: auto;
+      }
+
+      h2 {
+        font-size: 3.2rem;
+        font-family: "Roboto Condensed";
+        font-weight: 300;
+        color: $color-dark-grey;
+
+        @include respond(tab-land) {
+          font-size: 4rem;
+          font-weight: 400;
+        }
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        font-family: "Open Sans Light";
+        font-weight: 300;
+        color: $color-grey;
+        margin-bottom: 5rem;
+        margin-top: 1rem;
+
+        @include respond(tab-land) {
+          font-size: 2.8rem;
+        }
+
+        @include respond(phone) {
+          margin-bottom: 3.5rem;
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    //DISPLAY NONE FOR RESPONSIVE//
+    @include respond(tab-land) {
+      display: none;
+    }
+
+    &__image {
+      height: 64rem;
+      width: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &__color {
+      background: linear-gradient(to right ,$color-white-grey 55%, transparent);
+      height: 64rem;
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__text {
+      position: absolute;
+      left: 10rem;
+      top: 10rem;
+      z-index: 3;
+
+      h2 {
+        font-size: 3.2rem;
+        font-family: "Roboto Condensed";
+        color: $color-dark-grey;
+
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        font-family: "Open Sans Light";
+        font-weight: 300;
+        color: $color-grey;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+      }
+
+      ul {
+        margin-bottom: 5rem;
+
+        li {
+          list-style:none;
+          font-size: 1.6rem;
+          font-family: "Open Sans Light";
+          font-weight: 300;
+          color: $color-dark-grey;
+          margin-bottom: 1.5rem;
+
+          &::before {
+            content: '\f00c';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            display: inline-block;
+            margin-right: 1.5rem;
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+  }
+}

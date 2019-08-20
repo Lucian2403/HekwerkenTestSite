@@ -1,0 +1,178 @@
+.contact_image {
+  height: 30rem;
+  width: 100%;
+  background-attachment: fixed;
+  background-position-y: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(70%);
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    height: 22rem;
+  }
+}
+
+.contact_top {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond(tab-land) {
+    margin: 4rem;
+  }
+
+  @include respond(tab-port) {
+    display: inline-block;
+    margin: 2rem 0;
+  }
+
+  .contact_form {
+    width: 70%;
+    padding-right: 15%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 0 4rem;
+    }
+
+
+    @include respond(tab-land) {
+      padding-right: 7%;
+    }
+
+    .gform_heading {
+
+      h3 {
+        font-size: 3rem;
+        color: $color-dark-grey;
+        font-family: "Roboto Condensed";
+        font-weight: 300;
+      }
+      span {
+        font-family: "Open Sans Light";
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        color: $color-grey;
+      }
+    }
+
+    .validation_error {
+      font-family: "Open Sans Light";
+      font-size: 1.5rem;
+      color: $color-red;
+    }
+
+    .gform_body {
+      ul {
+        .gfield_label {
+          font-family: "Roboto Condensed";
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: $color-yellow;
+        }
+        .medium {
+          height: 4rem;
+          width: 100%;
+          padding: .5rem 1rem !important;
+          font-family: "Open Sans Light" !important;
+          font-size: 1.5rem !important;
+          color: $color-grey;
+          outline-color: $color-yellow;
+          border: 1px solid $color-grey;
+          border-radius: .5rem;
+
+          @include respond(tab-port-small) {
+            height: 6rem;
+          }
+        }
+        .validation_message {
+          font-family: "Open Sans Light";
+          font-size: 1.5rem;
+          color: $color-red;
+        }
+      }
+    }
+
+    .gform_footer {
+      .gform_button,
+      .gform_button:visited {
+        background-color: $color-yellow;
+        color: $color-dark-grey;
+        border: none;
+        border-radius: .5rem;
+
+        &:hover {
+          background-color: $color-yellow-hover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .gform_confirmation_wrapper {
+    .gform_confirmation_message {
+      font-family: "Open Sans";
+      font-size: 2.8rem;
+      color: $color-yellow;
+      text-align: center;
+      margin: 10rem 0;
+    }
+  }
+
+  .contact_text {
+    width: 40%;
+    background-color: $color-lighter-grey;
+    padding: 2rem;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 3rem;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-family: "Open Sans Light";
+      font-size: 1.6rem;
+    }
+  }
+}
+
+//////////BEDANKT PAGE////////
+/////////////////////////////
+.bedankt_image {
+  height: 35rem;
+  background-position-y: 50%;
+  background-size: cover;
+
+  @include respond(phone) {
+    height: 25rem;
+  }
+}
+
+.bedankt_info {
+  margin: 8rem auto 15rem auto;
+
+  @include respond(tab-port) {
+    padding: 0 3rem;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: 5rem;
+    color: $color-red;
+    margin-bottom: 3rem;
+  }
+}
+

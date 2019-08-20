@@ -1,0 +1,27 @@
+/*!
+Theme Name: hekwerken
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: velthuizen
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@import 'base';
+@import "header";
+@import "template-home";
+@import "_banner";
+@import "footer";
+@import "_default-page";
+
+@import "_producten";
+@import "_sierwerken";
+@import "_showtuin";
+@import "_contact";
+
+@import "_404";
+@import "_search content";

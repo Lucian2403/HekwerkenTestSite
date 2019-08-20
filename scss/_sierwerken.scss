@@ -1,0 +1,163 @@
+.hero_image {
+  height: 36rem;
+  width: 100%;
+  background-attachment: fixed;
+  background-position-y: -20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    height: 26rem;
+  }
+}
+
+.item_main_info {
+  margin: 6rem auto;
+
+  @include respond(tab-land) {
+    margin: 3rem auto;
+  }
+
+  h1 {
+    font-family: "Roboto Condensed";
+    font-size: 4.5rem;
+    color: $color-dark-grey;
+    margin-bottom: 3rem;
+
+    @include respond(tab-land) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  p {
+    font-family: "Open Sans Light";
+    font-size: 1.6rem;
+  }
+}
+
+.item_info {
+
+  .item_menu_text {
+    background-color: $color-light-grey;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+
+
+    ol {
+      display: flex;
+      justify-content: start;
+
+      @include respond(tab-land) {
+        padding-left: 5rem;
+      }
+
+
+      li {
+        font-family: "Open Sans Light";
+        font-size: 1.4rem;
+
+        &:not(:last-child) {
+          margin-right: 4rem;
+
+          &:after {
+            content: "|";
+            margin-left: 3rem;
+          }
+        }
+
+        a,
+        a:visited {
+          text-decoration: none;
+          color: $color-dark-grey;
+
+          &:hover {
+            color: $color-red;
+          }
+        }
+      }
+    }
+  }
+
+  .info_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(2n+1) {
+      flex-direction: row-reverse;
+
+      .info_section__info {
+        padding: 0 7% 0 18%;
+
+        @include respond(tab-land) {
+          padding: 0 4% 0 9%;
+        }
+
+        @include respond(phone) {
+          padding: 0 2rem;
+        }
+      }
+    }
+
+    @include respond(phone) {
+      display: inline-block;
+      position: relative;
+    }
+
+    &__image {
+      width: 50%;
+      height: 60rem;
+
+      @include respond(phone) {
+        width: 100%;
+      }
+
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        @include respond(phone) {
+          filter: brightness(55%);
+        }
+      }
+    }
+
+    &__info {
+      width: 50%;
+      padding: 0 18% 0 7%;
+
+      @include respond(tab-land) {
+        padding: 0 9% 0 4%;
+      }
+
+      @include respond(phone) {
+        position: absolute;
+        padding: 0 2rem;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      h2 {
+        @include respond(phone) {
+          color: $color-lighter-grey;
+        }
+      }
+
+      p {
+        margin: 2rem 0 5rem 0;
+        font-family: "Open Sans Light";
+        font-size: 1.6rem;
+        text-align: justify;
+
+        @include respond(phone) {
+          color: $color-lighter-grey;
+        }
+      }
+    }
+  }
+}

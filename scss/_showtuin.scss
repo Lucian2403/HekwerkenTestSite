@@ -1,0 +1,164 @@
+.showtuin {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  margin: 7rem auto 15rem auto;
+
+  @include respond(tab-land) {
+    margin: 3rem auto 5rem auto;
+    padding: 0 2rem;
+  }
+
+  @include respond(tab-port) {
+    display: inline-block;
+  }
+
+  .page_info {
+    width: 65%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: justify;
+      margin-bottom: 6rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-family: "Roboto Condensed";
+      font-weight: 400;
+      margin-bottom: .6rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    ul {
+      margin-bottom: 2rem;
+      li {
+        list-style: none;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        color: $color-grey;
+
+        &::before {
+          content: '\f00c';
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          display: inline-block;
+          margin-right: 1.5rem;
+          color: $color-dark-grey;
+        }
+      }
+    }
+  }
+
+
+  //CONTACT FORM ASIDE
+  .page_aside {
+    width: 30%;
+
+    @include respond(tab-port) {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .contact_form {
+      background-color: $color-lighter-grey;
+      padding: 1rem 2rem;
+      margin-bottom: 3rem;
+
+      .gform_heading {
+
+        h3 {
+          font-size: 2.2rem;
+          color: $color-dark-grey;
+          font-family: "Roboto Condensed";
+          font-weight: 300;
+        }
+        span {
+          font-size: 1.6rem;
+          line-height: 2.8rem;
+          color: $color-grey;
+        }
+      }
+
+      .validation_error {
+        font-size: 1.5rem;
+        color: $color-red;
+      }
+
+      .gform_body {
+        ul {
+          .gfield_label {
+            font-family: "Roboto Condensed";
+            font-weight: 300;
+            font-size: 1.6rem;
+            color: $color-grey;
+          }
+          .medium {
+            height: 4rem;
+            width: 100%;
+            padding: .5rem 1rem !important;
+            font-family: "Open Sans Light" !important;
+            font-size: 1.5rem !important;
+            color: $color-grey;
+            outline-color: $color-yellow;
+            border: 1px solid $color-grey;
+            border-radius: .5rem;
+
+            @include respond(tab-port) {
+              height: 5rem;
+            }
+          }
+          .validation_message {
+            font-size: 1.5rem;
+            color: $color-red;
+          }
+        }
+      }
+
+      .gform_footer {
+        .gform_button,
+        .gform_button:visited {
+          background-color: $color-yellow;
+          color: $color-dark-grey;
+          border: none;
+          border-radius: .5rem;
+
+          &:hover {
+            background-color: $color-yellow-hover;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .gform_confirmation_wrapper {
+      .gform_confirmation_message {
+        font-size: 1.8rem;
+        color: $color-yellow;
+        text-align: center;
+      }
+    }
+
+    .contact_text {
+      background-color: $color-lighter-grey;
+      padding: 2rem;
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-family: "Open Sans Light";
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

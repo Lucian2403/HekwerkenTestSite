@@ -1,0 +1,312 @@
+.site-footer {
+
+  .site-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 11.5rem;
+
+    @include respond(tab-land) {
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      padding: 0 1.5rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 0 6rem;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    div {
+      height: 18rem;
+
+      @include respond(tab-land) {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .contact_info {
+      border-right: 1.5px solid $color-light-grey;
+      padding-right: 12rem;
+      p {
+        line-height: 3rem;
+        font-size: 1.4rem;
+        font-family: "Open Sans";
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+
+        transition: .2s;
+
+        &:not(:last-child)::before {
+          content: '\f095';
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          font-size: 1.6rem;
+          display: inline-block;
+          margin-right: 1.5rem;
+        }
+
+        &:last-child::before {
+          content: '\f0e0';
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          font-size: 1.6rem;
+          display: inline-block;
+          margin-right: 1.5rem;
+        }
+        &:hover {
+          color: $color-red;
+        }
+      }
+
+      @include respond(tab-port) {
+        flex: 1 1 50%;
+        padding-right: 0;
+      }
+
+      @include respond(phone) {
+        border: none;
+      }
+    }
+
+    .footer_second {
+      display: flex;
+      @include respond(tab-port) {
+        flex: 1 1 50%;
+        padding-left: 4rem;
+        padding-right: 0;
+      }
+
+      @include respond(phone) {
+        padding-left: 0;
+        flex: none;
+      }
+
+    }
+
+    .footer_products {
+      margin-right: 4rem;
+
+      h4 {
+        line-height: 3rem;
+        font-size: 1.4rem;
+        font-family: "Roboto";
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+
+        transition: .2s;
+
+        &:hover {
+          color: $color-red;
+        }
+      }
+
+      @include respond(tab-port) {
+        width: 50%;
+      }
+    }
+
+    .footer_menu {
+      border-right: 1.5px solid $color-light-grey;
+      padding-right: 12rem;
+
+      @include respond(tab-port) {
+        padding-right: 0;
+        border: none;
+        width: 50%;
+      }
+
+      li {
+        list-style: none;
+        line-height: 3rem;
+        font-size: 1.4rem;
+        font-family: "Roboto";
+
+      }
+
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+
+        transition: .2s;
+
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+
+    .social_media {
+      border-right: 1.5px solid $color-light-grey;
+      padding-right: 12rem;
+
+      @include respond(phone) {
+        border: none;
+      }
+
+      p {
+        font-size: 1.4rem;
+        font-family: "Roboto";;
+        margin-bottom: 1rem;
+      }
+      a,
+      a:visited {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4rem;
+        font-family: "Roboto";;
+        text-decoration: none;
+        color: $color-grey;
+        margin-bottom: 1.5rem;
+
+        transition: .2s;
+
+        &:hover {
+          color: $color-red;
+        }
+
+        i {
+          color: $color-dark-grey;
+          margin-right: 1rem;
+        }
+
+        h4 {
+          flex: 1;
+        }
+      }
+
+      @include respond(tab-port) {
+        flex: 1 1 50%;
+        padding-right: 0;
+      }
+
+    }
+
+    .schedule {
+      p {
+        line-height: 3rem;
+        font-size: 1.4rem;
+        font-family: "Roboto";
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+        &:hover {
+          color: $color-red;
+        }
+      }
+
+      @include respond(tab-port) {
+        flex: 1 1 50%;
+        padding-left: 4rem;
+        padding-right: 0;
+      }
+
+      @include respond(phone) {
+        padding-left: 0;
+        flex: none;
+      }
+    }
+  }
+
+
+
+  .copyright {
+    border-top: 2px solid $color-light-grey;
+    height: 6rem;
+    margin-top: 10rem;
+
+    @include respond(tab-land) {
+      margin-top: 0;
+      padding: 3rem 0 3rem 0;
+      height: 15rem;
+    }
+
+    ul {
+      height: inherit;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      max-width: 117rem;
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 1%;
+
+      @include respond(big-desktop) {
+        max-width: 115rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      @include respond(tab-land) {
+        width: 100%;
+        margin: 0;
+
+        display: block;
+        text-align: center;
+      }
+
+      @include respond(tab-port-small) {
+        max-width: 85rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      @include respond(phone) {
+        max-width: 50rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      li {
+        list-style: none;
+        color: $color-grey;
+        font-family: "Roboto";
+        font-size: 1.2rem;
+
+        &:last-child {
+          flex: 1;
+          text-align: right;
+
+          @include respond(tab-land) {
+            text-align: center;
+            margin-top: 3rem;
+          }
+        }
+
+        &:nth-child(-n+2) {
+          margin-right: 3rem;
+
+          @include respond(tab-land) {
+            margin-right: 0;
+          }
+        }
+
+        &:nth-child(-n+2)::after {
+          content: '|';
+          padding-left: 2.5rem;
+
+          @include respond(tab-land) {
+            content: '';
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

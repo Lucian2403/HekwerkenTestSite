@@ -1,0 +1,117 @@
+.page-title {
+  margin-top: 10rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 5rem;
+  color: #691c0f;
+  margin-bottom: 2rem;
+  
+  span {
+    font-style: italic;
+    font-size: 4rem;
+    color: $color-yellow;
+    &::before,
+    &::after {
+      content:'"';
+    }
+  }
+}
+
+.page-content {
+  text-align: center;
+  p{
+    font-size: 2rem;
+    font-family: "Open Sans Light";
+    font-weight: 300;
+    color: $color-grey;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 15rem;
+    align-items: center;
+
+    .screen-reader-text {
+      display: none;
+    }
+
+    .search-field {
+      width: 30%;
+      height: 5rem;
+      border: none;
+      color: #3b566e;
+      background-color: rgba(0,0,0, 0.07);
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.6rem;
+      padding: 1.2rem 1rem;
+      border-radius: 1rem;
+
+      @include respond(tab-port-small) {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .search-submit {
+      margin-left: 1.5rem;
+      font-size: 1.8rem;
+      padding: 1rem 2rem;
+      transition: .3s;
+      font-family: "Open Sans Light";
+      font-weight: 300;
+      background-color: $color-yellow;
+      color: $color-dark-grey;
+      border: none;
+
+      &:hover {
+        background-color: $color-yellow-hover;
+        cursor: pointer;
+      }
+
+      @include respond(tab-port-small) {
+        margin-top: 1.5rem;
+        width: 40%;
+
+      }
+    }
+  }
+}
+
+////////////////
+//WITH RESULT//
+///////////////
+.type-page {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 15rem;
+  }
+
+  .entry-header {
+    a,
+    a:visited {
+      text-decoration: none;
+      color: $color-grey;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+  }
+  .entry-footer {
+    a,
+    a:visited {
+      text-decoration: none;
+      color: $color-grey;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+  }
+}
